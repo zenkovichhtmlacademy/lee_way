@@ -1,0 +1,48 @@
+
+@mixin text-size($font-size, $line-height, $font-weight) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+  }
+
+@mixin backlight($color: color) {
+  outline: 5px solid $color;
+  outline-offset: -5px;
+}
+
+
+@mixin bg-retinization ($background-image, $background-image-retina, $background-position, $width, $height) {
+  background-image: $background-image;
+  background-repeat: no-repeat;
+  background-position: center $background-position;
+  background-size: $width, $height;
+
+  @media (min-resolution: 2dppx) {
+    background-image: $background-image-retina;
+  }
+}
+
+@mixin button-reset() {
+  padding: 0;
+  width: auto;
+  border: none;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
+
+@mixin toggle-parametrs($width, $height, $background-color) {
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+}
+
+@mixin title-line($line-width, $line-height, $line-position) {
+  position: absolute;
+  content: "";
+  width: $line-width;
+  bottom: $line-position;
+  height: $line-height;
+  left: 0;
+  background-color: $hover-red;
+}

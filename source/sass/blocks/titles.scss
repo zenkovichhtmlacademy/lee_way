@@ -1,0 +1,15 @@
+.section-title {
+    font-size: 55px;
+    font-weight: 600;
+    position: relative;
+    color: $dark;
+
+    @media (max-width: $tablet-width) {
+        @include text-size(30px, 45px, 600)
+
+    }
+}
+
+
+
+
