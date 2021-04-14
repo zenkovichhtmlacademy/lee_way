@@ -1,0 +1,211 @@
+.main-nav {
+    width: 47%;
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+  
+  .main-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  
+    @media (max-width: $tablet-width) {
+      display: block;
+      margin-top: 70px;
+      min-height: 568px;
+    }
+  }
+  
+  
+  .main-nav__item {
+    padding: 30px 0;
+    position: relative;
+    margin-left: 40px;
+  
+    &--phone {
+      padding-left: 50px;
+  
+      @media (max-width: $tablet-width) {
+        display: none;
+      }
+    }
+  
+    @media (max-width: $tablet-width) {
+      padding: 0;
+      width: 100%;
+      margin: 0;
+      margin-left: 0;
+      margin-bottom: 30px;
+      background-color: #f8f8f8;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../img/arrow-down.svg");
+        background-repeat: no-repeat;
+        right: 10px;
+        top: 20px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  
+  .main-nav__link {
+    padding: 0;
+    color: $extra-black;
+    text-decoration: none;
+    @include text-size(14px, 17px, 500);
+  
+    &:hover {
+      color: $hover-red;
+  
+    }
+    
+    @media (max-width: $tablet-width) {
+        display: block;
+        color: $graphit;
+        @include text-size(20px, 28px, 600);
+        padding: 17px 40% 17px 16px;
+    }
+  
+    &--phone {
+      position: relative;
+      text-decoration: underline;
+      &:hover + svg {
+        color: $hover-red;
+        stroke: $hover-red;
+      }
+    }
+  
+  
+    @media (max-width: $tablet-width) {
+      color: $graphit;
+      @include text-size(20px, 170%, 600);
+    }
+  
+  }
+  
+  .phone {
+    position: relative;
+    @include text-size(18px, 32px, 400);
+  
+  
+  
+    & svg {
+      position: absolute;
+      left: -40px;
+      bottom: -5px;
+      fill: none;
+      stroke: $extra-black;
+  
+      &:hover {
+        stroke: $hover-red;
+      } 
+    }
+  }
+  .toggle-navigation--nojs {
+    display: none;
+  }
+  
+  
+  //Кнопка-бургер
+  
+  
+  .toggle-navigation {
+    position: relative;
+    @include button-reset();
+    @include toggle-parametrs(72px, 50px, $coral);
+    cursor: pointer;
+  
+    &:hover span {
+      background-image: $hover-red;
+    }
+  
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  
+    @media (max-width: $mobile-width) {
+      width: 50px;
+    }
+  }
+  
+  .toggle-navigation__icon {
+    position: absolute;
+    top: 50%;
+    left: 21px;
+    @include toggle-parametrs(25px, 1px, white);
+    border: none;
+    cursor: pointer;
+  
+    @media (max-width: $mobile-width) {
+      left: 12px;
+    }
+  
+  
+    &::before,
+    &::after {
+      @include toggle-parametrs(25px, 1px, white);
+      content: "";
+      display: block;
+      border: none;
+    }
+  
+  }
+  
+  .toggle-navigation--open {
+    & .toggle-navigation__icon::before {
+      transform: translate(0, -8px);
+    }
+  
+    & .toggle-navigation__icon::after {
+      transform: translate(0, 6px);
+    }
+  }
+  
+  .toggle-navigation--close {
+    background-color: transparent;
+    margin-left: auto;
+  
+    & .toggle-navigation__icon {
+      transform: rotate(45deg) translateY(-5px);
+      @include toggle-parametrs(30px, 1px, grey)
+    }
+  
+    & .toggle-navigation__icon::before {
+      transform: rotate(90deg);
+      @include toggle-parametrs(30px, 1px,grey)
+    }
+  
+    & .toggle-navigation__icon::after {
+      display: none;
+    }
+  
+    .page-header__top  {
+      flex-direction: column;
+    }
+  
+  
+    @media (max-width: $tablet-width) {
+      & + .main-nav {
+        display: block;
+        width: 100%;
+  
+      }
+    }
+  };
+  
+  
+  .main-nav--nojs {
+    @media (max-width: $tablet-width) {
+      display: block;
+      width: 100%;  
+    }
+  }
+  
+  

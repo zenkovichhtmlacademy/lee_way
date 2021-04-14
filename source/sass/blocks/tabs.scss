@@ -1,7 +1,39 @@
+.tabs__wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
 .tabs__content {
     display: none;
 }
 
 .tabs__content--active {
     display: block;
+}
+
+.tabs__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs__link {
+    text-decoration: none;
+}
+
+.tabs__content-button {
+    width: 250px;
+    justify-content: center;
+
+    @media(max-width: $mobile-width) {
+        width: 100%;
+    }
+}
+
+.tabs__content-title {
+    &::after {
+        @include title-line(175px, 3px, -30px);
+    }
 }

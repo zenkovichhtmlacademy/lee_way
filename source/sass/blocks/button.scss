@@ -10,6 +10,7 @@
     color: white;
     text-decoration: none;
     box-sizing: border-box;
+    min-height: 75px;
 
     &:hover {
         background-color: $hover-button;
